@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Problem Statement:\r Create two API’s which can perform the specified CRUD operations.The project structure should\r have models, middlewares, controllers and services. Write MongoDB queries to fetch, update,\r add or delete data from the specified collections. You can assume that the collections already\r exist in the database and just define the project structure.\r Customer API\r 1. Get all customers List with status ACTIVE [GET]\r 2. Delete customer. [DELETE]\r 3. Create new customer [POST]\r Card API\r 1. Get all Card List[GET]\r 2. Create new card [POST]\r Customer collection field:\r Field Type Description\r firstName string\r lastName string\r mobileNumber string 10 digits long\r DOB date\r emailID string abc@xyz.com\r address string\r customerID string UUID\r status string ACTIVE / INACTIVE\r Card collection field:\r Field Type Description\r cardNumber string Auto_increment e.g: C001\r cardType String [REGULAR/SPECIAL]\r customerName string\r status string [ACTIVE/INACTIVE] Default: ACTIVE\r vision string\r customerID string Reference from customer\r tabl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtifPervez/Assignment2-BacknedEngg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AtifPervez/Assignment2-BacknedEngg/issues"
+  },
+  "homepage": "https://github.com/AtifPervez/Assignment2-BacknedEngg#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20"
+  }
+}
