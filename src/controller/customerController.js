@@ -54,9 +54,7 @@ const createCustomer = async (req, res) => {
         if (!address) {
             return res.status(400).send({ status: false, message: "plz enter your address" });
         }
-        // if(!customerId){
-        //     return res.status(400).send({status:false,message:"plz enter customerId"})
-        // }
+       
 
         if (!Status) {
             return res.status(400).send({ status: false, message: "enter your status" });
@@ -73,43 +71,6 @@ const createCustomer = async (req, res) => {
 
 }
 
-// const login = async (req, res) => {
-//     try {
-//         let data = req.body
-//         let { emailID, mobileNumber } = data
-
-//         if (!Object.keys(data).length) {
-//             return res.status(400).send({ status: false, message: "plz enter your data" })
-//         }
-//         if (!emailID) {
-//             return res.status(400).send({ status: false, message: "plz enter your emailID" })
-//         }
-//         if (!mobileNumber) {
-//             return res.status(400).send({ status: false, message: "plz enter your phone number" })
-//         }
-
-//         let checkEmail = await customerModel.findOne({ emailID: emailID })
-//         if (!checkEmail) {
-//             return res.status(400).send({ status: false, message: "emailID is incorrect" })
-//         }
-//         if (mobileNumber != checkEmail.mobileNumber) {
-//             return res.status(400).send({ status: false, message: "mobileNumber is incorrect" })
-//         }
-//         let token = jwt.sign(
-//             {
-//                 customerID: checkEmail._id.toString(),
-//                 iat: Math.floor(Date.now() / 100),
-//                 exp: Math.floor(Date.now() / 100) + 24 * 60 * 60,
-//             },
-//             "password"
-//         )
-//         return res.status(200).send({ status: true, message: "customer login successfully", data: token })
-
-//     } catch (error) {
-//         res.status(500).send({ status: false, message: error.message })
-
-//     }
-// }
 
 const getCustomer = async (req, res) => {
     try {
@@ -133,9 +94,6 @@ const deleteCustomer = async (req, res) => {
     try {
 
         let customerId = req.params.customerId
-        // console.log(customerId);
-        // if (!customerId) {
-        //     return res.status(400).send({ status: false, message: "plz enter your customerID" })
 
         
         if (!mongoose.Types.ObjectId(customerId)) {
