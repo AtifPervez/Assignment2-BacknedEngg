@@ -13,33 +13,43 @@ const customerSchema = new mongoose.Schema({
     },
     mobileNumber: {
         type: String,
-        // required: true,
+        required: true,
         trim: true,
         unique: true
     },
-    dob: {
-        type: String,
-        trim: true,
+    DOB: {
+        type: Date,//YYYY/MM/DD
+        trim: true
+        
     },
-    email: {
+    emailID: {
         type: String,
-        // required: true,
+        lowerCase:true,
+        required: true,
         trim: true
     },
     address:{
         type:String,
-        // required:true,
+        required:true,
         trim:true
     },
-    customerID:{
+    customerId:{
         type:String,
         trim:true
+      
     },
-    status:{
+    Status:{
         type:String,
+        required:true,
+        trim:true
         
-        // required:true,
-        trim:true
+    },
+    isDeleted:{
+        type:Boolean,
+        default:false
+    },
+    deletedAt:{
+        type:Date
     }
 
 },
